@@ -1,0 +1,26 @@
+{
+  "name": "tip-off",
+  "version": "1.0.0",
+  "description": "real time lecture feedback",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonalisingh18/Lecture-Feedback.git"
+  },
+  "author": "sonali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sonalisingh18/Lecture-Feedback/issues"
+  },
+  "homepage": "https://github.com/sonalisingh18/Lecture-Feedback#readme",
+  "dependencies": {
+    "chart.js": "^3.6.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "socket.io": "^4.4.0"
+  }
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Tip-off-Student</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Sonali">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/animated.css">
+        <link rel="stylesheet" href="assets/css/owl.css">
+    </head>
+
+    <body>
+
+        <div class="container-fluid h-100" style="position: relative;">
+            <div class="col" style="padding-top: 50px; text-align: center;">
+                <h2 style= "font-family: cursive;">How do you feel about the lecture?</h2>
+            </div>
+        </div>
+        <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                            <div class="container-fluid h-100" style="padding-top: 0px; position: relative;">
+                                <div class="row" style="height: 100%;">
+                                    <div class="col-4" style=" padding-bottom: 50px; text-align: center;">
+                                        <h6>Concept Clarity</h6>
+                                        <input type="range" min="1" max="100" value="50" class="slider" id="range1">
+                                        <p id="val1" class="description">I am fine with it! 🙂</p>
+                                    </div>
+                                    <div class="col-4" style=" padding-bottom: 50px; text-align: center;">
+                                        <h6>Speed</h6>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="100" value="50" class="slider" id="range2">
+                                        </div>
+                                        <p id="val2" class="description">Just Right 🚶</p>
+                                    </div>
+                                    <div class="col-4" style=" padding-bottom: 50px; text-align: center;">
+                                        <h6>Engagement</h6>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="100" value="50" class="slider" id="range3">
+                                        </div>
+                                        <p id="val3" class="description">Listening 👂</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid h-100" style="padding-top: 0px; position: relative;">
+                            <div class="row" style="height: 100%;">
+                                <div class="col" style="padding-top: 40px; padding-bottom: 50px; text-align: center;">
+                                    <div style="width: 100%;">
+                                        <input type="text" id="query" name="query"></input>
+                                        <a onclick="notif()" class="btn btn-primary" style="color: rgb(236, 209, 135);"><b>Send</b></a>
+                                    </div>
+                                </div>  
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+        <!-- Scripts -->
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var deviceid
+            var data = {deviceid: 0, conceptclarity: 0, speed: 0, engagement: 0, notification: ""}
+            var socket = io()
+
+            const roomid = window.location.pathname
+
+            var slider1 = document.getElementById("range1");
+            var slider2 = document.getElementById("range2");
+            var slider3 = document.getElementById("range3");
+
+            var output1 = document.getElementById("val1");
+            var output2 = document.getElementById("val2");
+            var output3 = document.getElementById("val3");
+      
+            function setData(){
+                data.conceptclarity = slider1.value
+                data.speed = slider2.value
+                data.engagement = slider3.value
+            }
+
+            conceptclarity_phrases= [
+                "Crystal Clear! 💎",
+                "Ask Me Anything (about the topic) 😎",
+                "I and professor are Champions 🤘",
+                "Going Good 😁",
+                "I am Fine with it! 🙂",
+                "A Little Unclear 😕",
+                "Does Not Compute 💻",
+                "Bouncer 😵",
+                "What's going on? ❓"
+            ]
+            speed_phrases= [
+                "Tooooo Fast! 🤯",
+                "Professor Flash 🌪",
+                "Cheetah Mode 😾",
+                "Breezing Through 💨",
+                "Just Right 🚶",
+                "Little Faster -> Little Nicer 😶",
+                "Pick up the Pace Please 🏃",
+                "A Literal Snail 🐌",
+                "Glacial Pace ❄️",
+            ]   
+            engagement_phrases= [
+                "I'm locked in 🔒",
+                "Laser Focus 🧐",
+                "You have my Grip 🧲",
+                "Tuned in 🎶",
+                "Listening 👂",
+                "Kinda Checked Out 💆",
+                "ZzzZZZzzzz 😴",
+                "It's like Watching Paint Dry ⏳",
+                "Mentally, I'm in Outer Space 🌌"
+            ]     
+
+            slider1.oninput = function () {
+                output1.innerHTML = conceptclarity_phrases[Math.round(8-(this.value*8/100))];
+            }
+
+            slider2.oninput = function () {
+                output2.innerHTML = speed_phrases[Math.round(8-(this.value*8/100))];
+            }
+
+            slider3.oninput = function () {
+                output3.innerHTML = engagement_phrases[Math.round(8-(this.value*8/100))];
+            }
+      
+            async function setId(){
+                res = await fetch('/identifiers')
+                res = await res.json()
+                deviceid = res.id;
+                data.deviceid = deviceid
+            }
+
+            function notif() {
+                const note = document.getElementById('query').value;
+                setData();
+                data.notification = note;
+                socket.emit('formchange', {roomid, data});
+                data.notification = "";
+            };
+
+            var worker = new Worker('assets/js/message.js');
+            setId().then(()=>{
+                setData();
+                socket.emit('formchange', {roomid, data});
+                worker.onmessage = function() {
+                    setData()
+                    socket.emit('formchange', {roomid, data});
+                }
+             })
+  
+        </script>
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/owl-carousel.js"></script>
+        <script src="assets/js/animation.js"></script>
+        <script src="assets/js/custom.js"></script>
+
+    </body>
+</html>

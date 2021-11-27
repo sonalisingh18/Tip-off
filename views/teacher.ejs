@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Tip-off-Teacher</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Sonali">
+        <link rel="stylesheet" href="assets/css/teacher.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+
+    <body>
+
+        <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+            <div class="container-fluid h-100" style="padding-top: 0px; position: relative;">
+                <div class="row" style="height: 10%;">
+                    <div class="col" style="padding-top: 40px; padding-bottom: 50px; text-align: center;">
+                        <h1 style= "font-family: cursive;">Feedback Gauge</h1>
+                        <h2 id="roomiddisplay"></h2>
+                    </div>
+                </div>
+            </div>
+            <script>
+                const iddisplay = document.getElementById("roomiddisplay")
+                iddisplay.textContent = "Room ID: " + window.location.pathname.slice(6)
+            </script>
+            <div id="full">
+                <canvas id="chart"></canvas>
+            </div>
+            <div class="container-fluid" >
+                <div class="row"style="position: absolute; height: 40%; bottom: 0px; width: 100%;">
+                    <div class="col-4" style="text-align: center; background-color: rgb(146, 85, 243); color: white;">
+                        <h4 style="font-size:4vw; padding-top: 3vh">Concept Clarity</h4>
+                        <h2 style="font-size:6vw; padding-top: 3vh;" id="ccval">🙂</h2>
+                    </div>
+                    <div class="col-4" style="text-align: center; background-color: rgb(216, 74, 55) ; color: white;">
+                        <h4 style="font-size:4vw; padding-top: 3vh">Speed</h4>
+                        <h2 style="font-size:6vw; padding-top: 3vh;" id="sval">🙂</h2>
+                    </div>
+                    <div class="col-4" style="text-align: center; background-color: rgb(120, 218, 74); color: white;">
+                        <h4 style="font-size:4vw; padding-top: 3vh">Engagement</h4>
+                        <h2 style="font-size:6vw; padding-top: 3vh;" id="eval">🙂</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+       <!-- Scripts -->
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script>
+            const startTime = new Date();
+            const DEVICE_IDS = new Set();
+            var mean_conceptclariry = {
+                data: [[0,50]],
+                label: "mean c",
+                borderColor: "rgba(146, 85, 243, 1)"
+            };
+            var mean_speed = {
+                data: [[0,50]],
+                label: "mean s",
+                borderColor: "rgba(216, 74, 55, 1)"
+            };
+            var mean_engagement = {
+                data: [[0,50]],
+                label: "mean e",
+                borderColor: "rgba(120, 218, 74, 1)"
+            };
+
+            const config = document.getElementById('chart');
+            const chart = new Chart(config,{
+                type: 'scatter',
+                data: {},
+                options: {
+                    animation: false,
+                    showLine: true,
+                    responsive:true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            display: false
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Feedback Data'
+                    },
+                    elements: {
+                        point:{
+                            radius: 0
+                        }
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                },
+            });
+
+            chart.data.datasets.push(mean_conceptclariry);
+            chart.data.datasets.push(mean_speed);
+            chart.data.datasets.push(mean_engagement);
+        </script>
+
+        <script src="/assets/js/teacher.js"></script>
+
+    </body>
+</html>
