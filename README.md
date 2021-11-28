@@ -1,5 +1,5 @@
 ### :rocket: Project: Tip-off
-    Tip-off: Teaching's Instant Progress (Tip-off meaning - passing secrete message)
+    Tip-off: Teaching's Instant Progress (Tip-off meaning - passing secret message)
     As a student sometimes we all have been in a classroom where the teacher's lecture was 
     flying over our head, we thought that teacher should either reduce or increase his pace, 
     felt a need for an example to explain the tricky concept but we felt hesitant in speaking 
@@ -20,10 +20,10 @@
     1. As a teacher create a new room, then a Classroom ID will be generated and the teacher can share the Classroom ID with the students.
     2. As a student join a room by entering Classroom ID.
     3. Students can provide feedback on parameters like Concept Clarity, Speed, Engagement.
-    4. Students can send any query to the teacher.
-    5. Teachers can see the feedback gauge and the graph value changes in real-time as there is any change in the feedback parameters.
-    6. Teachers will receive a notification when any students send a message.
-    7. Graph will display individual fluctuations in feedback values for all the students with a thin line and the thick line represents the average feedback value of all the students.
+    4. Students can send any query related to the topic to the teacher.
+    5. Teacher can see the feedback gauge and the graph value changes in real-time as soon as there is any change in the feedback parameters.
+    6. Teacher will receive a notification when any students send a query.
+    7. Graph will display fluctuations in feedback values for all the individual students with thin lines and the thick line represents the average feedback value of all the students.
 
 ### :computer: Tech used:
     1. Node.js
