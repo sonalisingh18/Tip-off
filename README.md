@@ -10,7 +10,7 @@
 
     So, this is what Tip-off does. Using Tip-off you can provide feedback to the lectures in 
     real-time anonymously without interrupting the class flow and based on the feedback from 
-    students, teachers can change improve their style of teaching or answer any query that 
+    students, teachers can change improve their teaching style or answer any query that 
     has been put up by the students.     
     
    :zap: You are most welcome to test live working model <a href="http://tip-0ff.herokuapp.com/" target="_blank">here</a>.
