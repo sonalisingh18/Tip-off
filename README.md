@@ -22,7 +22,7 @@
     3. Students can provide feedback on parameters like Concept Clarity, Speed, Engagement.
     4. Students can send any query related to the topic to the teacher.
     5. Teacher can see the feedback gauge and the graph value changes in real-time as soon as there is any change in the feedback parameters.
-    6. Teacher will receive a notification when any students send a query.
+    6. Teacher will receive a notification when any student sends a query.
     7. Graph will display fluctuations in feedback values for all the individual students with thin lines and the thick line represents the average feedback value of all the students.
 
 ### :computer: Tech used:
