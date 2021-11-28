@@ -1,5 +1,4 @@
 ### :rocket: Project: Tip-off
-सब local is a web app developed for connecting local shops to their regular customers by online
     Tip-off: Teaching's Instant Progress (Tip-off meaning - passing secrete message)
     As a student sometimes we all have been in a classroom where the teacher's lecture was 
     flying over our head, we thought that teacher should either reduce or increase his pace, 
@@ -12,8 +11,8 @@
     So, this is what Tip-off does. Using Tip-off you can provide feedback to the lectures in 
     real-time anonymously without interrupting the class flow and based on the feedback from 
     students, teachers can change improve their style of teaching or answer any query that 
-    has been put up by the students. 
-
+    has been put up by the students.     
+    
     :zap: You are most welcome to test live working model <a href="http://tip-0ff.herokuapp.com/" target="_blank">here</a>.
 
 ### :dart: Final prototye of project: 
