@@ -13,7 +13,7 @@
     students, teachers can change improve their style of teaching or answer any query that 
     has been put up by the students.     
     
-    :zap: You are most welcome to test live working model <a href="http://tip-0ff.herokuapp.com/" target="_blank">here</a>.
+   :zap: You are most welcome to test live working model <a href="http://tip-0ff.herokuapp.com/" target="_blank">here</a>.
 
 ### :dart: Final prototye of project: 
     The final prototype of the project can perform the following actions.
