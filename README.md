@@ -48,5 +48,11 @@
   ![Tip-off thumbnail](https://user-images.githubusercontent.com/45911025/143779375-411c197b-6190-4110-b142-abbd003a7d12.png)
   
   ![Screenshot from 2021-11-28 22-32-53](https://user-images.githubusercontent.com/45911025/143779639-1db365ac-d9d3-4abc-bb02-56de8e1e687f.png)
+  
+  ![Screenshot from 2021-11-28 22-39-08](https://user-images.githubusercontent.com/45911025/143779670-a7fda70b-7d45-489a-a28a-79557d46df0e.png)
+  
+  ![Screenshot from 2021-11-28 22-36-17](https://user-images.githubusercontent.com/45911025/143779687-77047efd-90ab-44df-9d96-1526395416c1.png)
+
+
 
 
