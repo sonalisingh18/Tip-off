@@ -1,5 +1,5 @@
 ### :rocket: Project: Tip-off
-    Tip-off: Teaching's Instant Progress (Tip-off meaning - passing secret message)
+    Tip-off: Teaching's Instant Progress (Tip-off meaning - information given in a confidential way)
     As a student sometimes we all have been in a classroom where the teacher's lecture was 
     flying over our head, we thought that teacher should either reduce or increase his pace, 
     felt a need for an example to explain the tricky concept but we felt hesitant in speaking 
@@ -44,4 +44,6 @@
     3. Run web-app on local host.
           node server (entry js file)
        
-     
+### :camera_flash: Snapshots from the web-app:
+     ![Tip-off thumbnail](https://user-images.githubusercontent.com/45911025/143779375-411c197b-6190-4110-b142-abbd003a7d12.png)
+
