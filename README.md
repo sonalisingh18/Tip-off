@@ -45,5 +45,5 @@
           node server (entry js file)
        
 ### :camera_flash: Snapshots from the web-app:
-     ![Tip-off thumbnail](https://user-images.githubusercontent.com/45911025/143779375-411c197b-6190-4110-b142-abbd003a7d12.png)
+  ![Tip-off thumbnail](https://user-images.githubusercontent.com/45911025/143779375-411c197b-6190-4110-b142-abbd003a7d12.png)
 
