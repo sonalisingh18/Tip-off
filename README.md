@@ -46,4 +46,7 @@
        
 ### :camera_flash: Snapshots from the web-app:
   ![Tip-off thumbnail](https://user-images.githubusercontent.com/45911025/143779375-411c197b-6190-4110-b142-abbd003a7d12.png)
+  
+  ![Screenshot from 2021-11-28 22-32-53](https://user-images.githubusercontent.com/45911025/143779639-1db365ac-d9d3-4abc-bb02-56de8e1e687f.png)
+
 
